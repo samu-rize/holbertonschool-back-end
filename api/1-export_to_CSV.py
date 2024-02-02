@@ -18,7 +18,7 @@ if __name__ == "__main__":
     data_users = requests.get(f"{uri}/users/{id}").json()
     data_todos = requests.get(f"{uri}/todos?userId={id}").json()
 
-    name = data_users.get("name")
+    name = data_users.get("username")
     with open(f'{id}.csv', 'w') as teemo:
         for data in data_todos:
             completed = data["completed"]
